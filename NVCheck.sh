@@ -1,5 +1,6 @@
 #!/bin/bash
 # This script was created to fix the plex docker not launching when backups or restarts are run
+echo "************ "$(date -u)" Backup starting ************" >> ~/logs/NVCheck.log 2>&1
 echo $(date -u) "Running backup script" >> ~/logs/NVCheck.log 2>&1 # This states that the backup script is running
 cd ~/cloudbox && sudo ansible-playbook cloudbox.yml --tags backup 
 echo $(date -u) "Backup Complete, checking if Plex Docker is running..." >> ~/logs/NVCheck.log 2>&1
