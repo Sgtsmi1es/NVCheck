@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script was created to fix the plex docker not launching when backups or restarts are run
-echo "************ "$(date -u)" NVCheck ************" 
-echo $(date -u) "Checking if Plex Docker is running..."
+echo "************ "$(date -u)" NVCheck Simple ************" 
+echo $(date -u) "Checking if Plex Docker is running..." 
 if docker inspect -f '{{.State.Running}}' plex | grep -q 'true'; # This loop checks the running status of the plex docker and then re-runs the nvidia tag if it does not find plex running.
     then
         echo $(date -u) "plex already started, script finished." >> ~/logs/NVCheck.log 2>&1
